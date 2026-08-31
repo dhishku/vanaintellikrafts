@@ -7,10 +7,10 @@
 | Todo | Status |
 |------|--------|
 | Mockup for review | Done — `mockups/vana-website.html` (v2: Abhyaas-matched graph, unified orange theme, Inter only, YouTube thumbnail) |
-| Promote to `website/` + Privacy/Terms | Pending sign-off |
-| GitHub + Vercel deploy | Pending |
-| GoDaddy DNS → www | Pending |
-| Verify live HTTPS | Pending |
+| Promote to `website/` + Privacy/Terms | Done |
+| GitHub + Vercel deploy | Done — [website-tau-sandy-79.vercel.app](https://website-tau-sandy-79.vercel.app) |
+| GoDaddy DNS → www | **Action required** — update DNS records (see below) |
+| Verify live HTTPS | Pending DNS propagation |
 
 ## What this site is for
 
