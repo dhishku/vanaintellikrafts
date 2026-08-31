@@ -1,11 +1,10 @@
-# Update GoDaddy DNS for vanaintellikrafts.in → GitHub Pages (www) with apex A records.
+# Update GoDaddy DNS for vanaintellikrafts.in → Vercel.
 # Requires GoDaddy API key: https://developer.godaddy.com/keys
 # Store credentials in gitignored .env at repo root:
 #   GODADDY_API_KEY=...
 #   GODADDY_API_SECRET=...
 param(
     [string]$Domain = "vanaintellikrafts.in",
-    [string]$WwwTarget = "dhishku.github.io",
     [string]$EnvFile = "$PSScriptRoot\..\.env",
     [string]$ApiKey = $env:GODADDY_API_KEY,
     [string]$ApiSecret = $env:GODADDY_API_SECRET,
@@ -25,33 +24,14 @@ if (Test-Path $EnvFile) {
     }
 }
 
-# Fallback: restaurant project credentials (same GoDaddy account)
-$fallbackEnv = "d:\projects\restaurant\infra\.env.godaddy"
-if ((-not $ApiKey -or -not $ApiSecret) -and (Test-Path $fallbackEnv)) {
-    Get-Content $fallbackEnv | ForEach-Object {
-        if ($_ -match '^\s*([^#=]+)=(.*)$') {
-            $name = $matches[1].Trim()
-            $value = $matches[2].Trim().Trim('"').Trim("'")
-            if ($name -eq "GODADDY_API_KEY" -and -not $ApiKey) { $ApiKey = $value }
-            if ($name -eq "GODADDY_API_SECRET" -and -not $ApiSecret) { $ApiSecret = $value }
-        }
-    }
-}
-
-$apexIps = @(
-    "185.199.108.153",
-    "185.199.109.153",
-    "185.199.110.153",
-    "185.199.111.153"
+$records = @(
+    @{ type = "A"; name = "@"; data = "76.76.21.21"; ttl = 600 }
+    @{ type = "A"; name = "www"; data = "76.76.21.21"; ttl = 600 }
 )
 
-$records = @(
-    @{ type = "CNAME"; name = "www"; data = $WwwTarget; ttl = 600 }
-) + ($apexIps | ForEach-Object { @{ type = "A"; name = "@"; data = $_; ttl = 600 } })
-
-Write-Host "GoDaddy DNS for $Domain"
-Write-Host "  CNAME www -> $WwwTarget"
-foreach ($ip in $apexIps) { Write-Host "  A @ -> $ip" }
+Write-Host "GoDaddy DNS for $Domain -> Vercel"
+Write-Host "  A @ -> 76.76.21.21"
+Write-Host "  A www -> 76.76.21.21"
 
 if ($WhatIf) {
     Write-Host "WhatIf: no API calls made."
