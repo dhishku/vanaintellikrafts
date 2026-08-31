@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vana Intellikrafts Solutions | AI EdTech for Competitive Exams</title>
+  <meta name="description" content="Vana Intellikrafts Solutions builds Abhyaas — statistical score prediction and active recall for UPSC Prelims. Incorporated 2026, Jaipur, Rajasthan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Vana Intellikrafts Solutions Private Limited",
+    "legalName": "Vana Intellikrafts Solutions Private Limited",
+    "url": "https://www.vanaintellikrafts.in",
+    "logo": "https://www.vanaintellikrafts.in/assets/VanaLogo.png",
+    "email": "founder@vanaintellikrafts.in",
+    "foundingDate": "2026-08-01",
+    "taxID": "AAMCV5367N",
+    "identifier": "U62091RJ2026PTC116675",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "106, Shanti Nagar, Gurjar Ki Thadi, Shyam Nagar",
+      "addressLocality": "Jaipur",
+      "postalCode": "302019",
+      "addressRegion": "Rajasthan",
+      "addressCountry": "IN"
+    },
+    "sameAs": ["https://abhyaas.co.in", "https://youtu.be/z1-Znoo_y5s"]
+  }
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --brand-primary: #ee9211;
+      --brand-primary-soft: #fff4e5;
+      --brand-secondary: #482c05;
+      --brand-text-dark: #05162e;
+      --brand-text-warm: #482c05;
+      --brand-surface: #ffffff;
+      --brand-surface-low: #faf8f6;
+      --brand-outline: color-mix(in srgb, var(--brand-text-dark) 12%, transparent);
+      --brand-link: #116dee;
+      --radius-sm: 12px;
+      --radius-md: 16px;
+      --radius-lg: 20px;
+      --radius-pill: 999px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --font-sans: "Inter", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      background: var(--brand-surface-low);
+      color: var(--brand-text-dark);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, 100% - 2rem);
+      margin-inline: auto;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      position: sticky;
+      top: 0.75rem;
+      z-index: 200;
+      padding: 0 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .nav-shell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.65rem 1rem 0.65rem 1.25rem;
+      background: color-mix(in srgb, var(--brand-surface) 90%, transparent);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--brand-outline);
+      border-radius: var(--radius-pill);
+      transition: var(--transition);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      min-width: 0;
+    }
+
+    .brand img {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: -0.02em;
+      color: var(--brand-secondary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: color-mix(in srgb, var(--brand-text-dark) 70%, white);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover { color: var(--brand-primary); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.15rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 600;
+      font-family: var(--font-sans);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--brand-primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.04);
+    }
+
+    .btn-secondary {
+      background: var(--brand-surface);
+      color: var(--brand-text-dark);
+      border: 1px solid var(--brand-outline);
+    }
+
+    .btn-secondary:hover { background: var(--brand-surface-low); }
+
+    .menu-toggle {
+      display: flex;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--brand-outline);
+      background: var(--brand-surface);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--brand-text-dark);
+      border-radius: 2px;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    .menu-toggle span::before { top: -6px; }
+    .menu-toggle span::after { top: 6px; }
+
+    .menu-toggle[aria-expanded="true"] span { background: transparent; }
+    .menu-toggle[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span::after { top: 0; transform: rotate(-45deg); }
+
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 190;
+      background: color-mix(in srgb, var(--brand-text-dark) 35%, transparent);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .mobile-drawer.open { opacity: 1; pointer-events: auto; }
+
+    .mobile-panel {
+      position: absolute;
+      top: 4.5rem;
+      left: 1rem;
+      right: 1rem;
+      padding: 1.25rem;
+      background: var(--brand-surface);
+      border: 1px solid var(--brand-outline);
+      border-radius: var(--radius-md);
+      transform: translateY(-12px);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .mobile-drawer.open .mobile-panel {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .mobile-panel ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .mobile-panel a {
+      display: block;
+      padding: 0.75rem 0.5rem;
+      font-weight: 500;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+
+    .mobile-panel a:hover { background: var(--brand-surface-low); }
+
+    @media (min-width: 768px) {
+      .nav-links { display: flex; }
+      .menu-toggle { display: none; }
+      .mobile-drawer { display: none !important; }
+    }
+
+    @media (max-width: 767px) {
+      .nav-links { display: none !important; }
+      .mobile-drawer { display: block; }
+      .brand-text { display: none; }
+      .nav-shell .btn-secondary { display: none; }
+    }
+
+    /* ── Hero ── */
+    .hero { padding: 1.5rem 0 3rem; }
+
+    .hero-grid {
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-pill);
+      background: var(--brand-primary-soft);
+      color: var(--brand-secondary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--brand-primary);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.85); }
+    }
+
+    .hero h1 {
+      font-size: clamp(1.85rem, 5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      color: var(--brand-text-dark);
+    }
+
+    .hero-lead {
+      font-size: 1rem;
+      color: color-mix(in srgb, var(--brand-text-dark) 72%, white);
+      max-width: 34rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .trust-line {
+      font-size: 0.82rem;
+      color: color-mix(in srgb, var(--brand-text-dark) 65%, white);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1rem;
+    }
+
+    .trust-line span::before {
+      content: "•";
+      margin-right: 0.5rem;
+      color: var(--brand-primary);
+    }
+
+    .trust-line span:first-child::before { content: none; margin: 0; }
+
+    /* ── Abhyaas preview (matches abhyaas.co.in) ── */
+    .preview-wrap {
+      position: relative;
+      padding-top: 2.75rem;
+    }
+
+    @keyframes pill-bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    @keyframes card-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes dot-pulse {
+      0% { transform: scale(1); opacity: 0.45; }
+      100% { transform: scale(5); opacity: 0; }
+    }
+
+    .preview-float {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: pill-bob 4.5s ease-in-out infinite;
+    }
+
+    .preview-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-pill);
+      background: color-mix(in srgb, var(--brand-surface) 88%, transparent);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid color-mix(in srgb, var(--brand-primary) 28%, var(--brand-outline));
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--brand-text-dark);
+      white-space: nowrap;
+      box-shadow: 0 4px 16px color-mix(in srgb, var(--brand-text-dark) 6%, transparent);
+    }
+
+    .preview-pill svg {
+      width: 14px;
+      height: 14px;
+      color: var(--brand-primary);
+      flex-shrink: 0;
+    }
+
+    .preview-arrow {
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid color-mix(in srgb, var(--brand-primary) 50%, var(--brand-outline));
+      border-bottom: 2px solid color-mix(in srgb, var(--brand-primary) 50%, var(--brand-outline));
+      transform: rotate(45deg);
+      margin-top: 0.35rem;
+    }
+
+    .score-card {
+      background: var(--brand-surface);
+      border: 1px solid var(--brand-outline);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.25rem 1rem;
+      overflow: hidden;
+      box-shadow: 0 12px 40px color-mix(in srgb, var(--brand-text-dark) 8%, transparent);
+      animation: card-float 6s ease-in-out infinite;
+    }
+
+    .score-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .score-card-header h2 {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--brand-text-warm);
+    }
+
+    .confidence-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.25rem 0.55rem;
+      border-radius: var(--radius-pill);
+      background: var(--brand-primary-soft);
+      color: var(--brand-secondary);
+      white-space: nowrap;
+      transition: opacity 0.15s ease;
+    }
+
+    .score-display {
+      display: flex;
+      align-items: baseline;
+      gap: 0.45rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .score-main {
+      font-size: 2.65rem;
+      font-weight: 700;
+      color: var(--brand-primary);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .score-range {
+      font-size: 0.95rem;
+      color: var(--brand-text-warm);
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .chart-wrap {
+      position: relative;
+      height: 120px;
+      margin: 0.5rem 0 0.75rem;
+    }
+
+    .chart-wrap svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: visible;
+    }
+
+    .chart-band { transition: opacity 0.15s ease; }
+
+    .chart-line {
+      fill: none;
+      stroke: var(--brand-primary);
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .chart-dot {
+      fill: var(--brand-primary);
+    }
+
+    .chart-pulse {
+      fill: none;
+      stroke: var(--brand-primary);
+      stroke-width: 1.5;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+
+    .chart-pulse-1 { animation: dot-pulse 2.4s ease-out infinite; }
+    .chart-pulse-2 { animation: dot-pulse 2.4s ease-out infinite 1.2s; }
+
+    .chart-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      color: color-mix(in srgb, var(--brand-text-warm) 85%, white);
+    }
+
+    .chart-meta-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .chart-meta svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+
+    /* ── Sections ── */
+    .section { padding: 3.5rem 0; }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: var(--brand-text-dark);
+    }
+
+    .section-header p {
+      color: color-mix(in srgb, var(--brand-text-dark) 68%, white);
+      font-size: 0.95rem;
+    }
+
+    .glass {
+      background: color-mix(in srgb, var(--brand-surface) 92%, transparent);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--brand-outline);
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+    }
+
+    .glass-hover:hover {
+      border-color: color-mix(in srgb, var(--brand-primary) 35%, var(--brand-outline));
+      transform: translateY(-3px);
+    }
+
+    .bento {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+      .bento { grid-template-columns: repeat(3, 1fr); }
+      .bento .span-2 { grid-column: span 2; }
+    }
+
+    .bento-card {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tag {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-pill);
+    }
+
+    .tag-live {
+      background: var(--brand-primary-soft);
+      color: var(--brand-secondary);
+      border: 1px solid color-mix(in srgb, var(--brand-primary) 30%, transparent);
+    }
+
+    .tag-pipeline {
+      background: color-mix(in srgb, var(--brand-secondary) 8%, white);
+      color: var(--brand-secondary);
+      border: 1px solid color-mix(in srgb, var(--brand-secondary) 18%, transparent);
+    }
+
+    .card-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--brand-primary);
+    }
+
+    .bento-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.3;
+      padding-right: 4rem;
+    }
+
+    .bento-card p {
+      font-size: 0.9rem;
+      color: color-mix(in srgb, var(--brand-text-dark) 68%, white);
+      line-height: 1.6;
+    }
+
+    .card-link {
+      margin-top: auto;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand-link);
+      transition: var(--transition);
+    }
+
+    .card-link:hover { opacity: 0.85; }
+
+    /* Video */
+    .video-shell {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--brand-outline);
+      background: var(--brand-surface-low);
+      box-shadow: 0 8px 32px color-mix(in srgb, var(--brand-text-dark) 6%, transparent);
+    }
+
+    .video-shell iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-poster {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: 0;
+      cursor: pointer;
+      background: #000;
+      display: block;
+    }
+
+    .video-poster img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.92;
+      transition: opacity 0.3s ease;
+    }
+
+    .video-poster:hover img { opacity: 0.78; }
+
+    .video-play {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .video-play-btn {
+      width: 68px;
+      height: 48px;
+      background: color-mix(in srgb, #ff0000 88%, black);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px color-mix(in srgb, black 35%, transparent);
+      transition: transform 0.2s ease;
+    }
+
+    .video-poster:hover .video-play-btn { transform: scale(1.06); }
+
+    .video-play-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+      margin-left: 3px;
+    }
+
+    /* Leadership */
+    .team-grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 600px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .team-card {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .team-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid var(--brand-outline);
+    }
+
+    .team-card h3 { font-size: 1.05rem; font-weight: 700; }
+
+    .team-card .role {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand-primary);
+    }
+
+    /* Entity */
+    .entity-card { padding: 2rem; }
+
+    .entity-card h3 {
+      font-size: clamp(1.1rem, 3vw, 1.45rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .entity-grid {
+      display: grid;
+      gap: 0.75rem 2rem;
+      font-size: 0.88rem;
+    }
+
+    @media (min-width: 600px) {
+      .entity-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .entity-grid dt {
+      font-weight: 600;
+      color: color-mix(in srgb, var(--brand-text-dark) 60%, white);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .entity-grid dd {
+      margin-bottom: 0.5rem;
+      color: var(--brand-text-dark);
+    }
+
+    .entity-desc {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--brand-outline);
+      font-size: 0.92rem;
+      color: color-mix(in srgb, var(--brand-text-dark) 68%, white);
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--brand-outline);
+      padding: 2.5rem 0 3rem;
+      margin-top: 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 1.5rem;
+      font-size: 0.82rem;
+      color: color-mix(in srgb, var(--brand-text-dark) 65%, white);
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid { grid-template-columns: 1.4fr 1fr; }
+    }
+
+    .footer-grid strong {
+      display: block;
+      color: var(--brand-text-dark);
+      font-size: 0.88rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--brand-link);
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover { opacity: 0.85; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1), transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .eyebrow-dot, .preview-float, .score-card, .chart-pulse-1, .chart-pulse-2 { animation: none; }
+      .score-card:hover, .glass-hover:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav-shell" aria-label="Main">
+        <a class="brand" href="#">
+          <img src="../assets/VanaLogo.png" alt="Vana Intellikrafts" width="120" height="36">
+          <span class="brand-text">Vana Intellikrafts</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#product">Product</a></li>
+          <li><a href="#demo">Demo</a></li>
+          <li><a href="#technology">Technology</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#company">Company</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a class="btn btn-secondary" href="mailto:founder@vanaintellikrafts.in">Contact</a>
+          <a class="btn btn-primary" href="https://abhyaas.co.in" target="_blank" rel="noopener">Launch Abhyaas</a>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-menu" hidden>
+    <div class="mobile-panel">
+      <ul>
+        <li><a href="#product">Product</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#technology">Technology</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#company">Company</a></li>
+      </ul>
+      <a class="btn btn-secondary" href="mailto:founder@vanaintellikrafts.in" style="width:100%;margin-bottom:0.5rem;">Contact</a>
+      <a class="btn btn-primary" href="https://abhyaas.co.in" target="_blank" rel="noopener" style="width:100%;">Launch Abhyaas</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Live product · Free diagnostic · Inc. 01 Aug 2026
+          </div>
+          <h1>Active recall and statistical readiness for competitive exams</h1>
+          <p class="hero-lead">
+            Vana Intellikrafts builds <strong>Abhyaas</strong> — replacing passive syllabus completion with immediate topic-level testing, dynamic 95% confidence band score modeling, and automated evaluation engines for UPSC Prelims and beyond.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://abhyaas.co.in" target="_blank" rel="noopener">Explore live platform</a>
+            <a class="btn btn-secondary" href="#demo">Watch demo</a>
+          </div>
+          <div class="trust-line">
+            <span>Validation stage startup</span>
+            <span>Applying to Startup India</span>
+            <span>Cloud-native architecture</span>
+          </div>
+        </div>
+
+        <div class="preview-wrap reveal" aria-label="Illustrative Abhyaas product UI">
+          <div class="preview-float">
+            <span class="preview-pill">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z"/></svg>
+              What your result will look like
+            </span>
+            <span class="preview-arrow" aria-hidden="true"></span>
+          </div>
+
+          <div class="score-card">
+            <div class="score-card-header">
+              <h2>Your predicted score</h2>
+              <span class="confidence-badge" id="confidence-badge">Confidence: low</span>
+            </div>
+            <div class="score-display">
+              <span class="score-main" id="score-main">86</span>
+              <span class="score-range" id="score-range">64 – 108</span>
+            </div>
+            <div class="chart-wrap">
+              <svg id="score-chart" viewBox="0 0 320 120" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="bandGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#ee9211" stop-opacity="0.22"/>
+                    <stop offset="100%" stop-color="#ee9211" stop-opacity="0.04"/>
+                  </linearGradient>
+                </defs>
+                <path id="band-path" class="chart-band" fill="url(#bandGrad)" stroke="none"/>
+                <path id="line-path" class="chart-line"/>
+                <circle id="pulse-1" class="chart-pulse chart-pulse-1" r="4" cx="0" cy="0"/>
+                <circle id="pulse-2" class="chart-pulse chart-pulse-2" r="4" cx="0" cy="0"/>
+                <circle id="dot" class="chart-dot" r="4" cx="0" cy="0"/>
+              </svg>
+            </div>
+            <div class="chart-meta">
+              <span class="chart-meta-row">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                Historical cut-offs
+              </span>
+              <span class="chart-meta-row">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                Your personal score model generates immediately after answering 10 questions
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="product" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Live on Abhyaas.co.in</h2>
+          <p>Features available to aspirants today — not roadmap promises.</p>
+        </div>
+        <div class="bento">
+          <article class="glass glass-hover bento-card span-2 reveal">
+            <span class="tag tag-live">Live now</span>
+            <span class="card-label">Statistical modeling</span>
+            <h3>Trinomial probability &amp; dynamic 95% confidence band</h3>
+            <p>Captures P(Correct), P(Incorrect penalty risk), and P(Unattempted). Sequential Bayesian updating narrows the 95% interval as attempt volume grows — so readiness is measurable, not guessed.</p>
+            <a class="card-link" href="https://abhyaas.co.in" target="_blank" rel="noopener">Try score projection →</a>
+          </article>
+          <article class="glass glass-hover bento-card reveal">
+            <span class="tag tag-live">Live now</span>
+            <span class="card-label">Micro-testing</span>
+            <h3>Immediate topic-level practice</h3>
+            <p>Select syllabus topics and practice targeted question sets right after study — no waiting for full syllabus completion.</p>
+          </article>
+          <article class="glass glass-hover bento-card reveal">
+            <span class="tag tag-live">Live now</span>
+            <span class="card-label">Habit engine</span>
+            <h3>Daily quizzes &amp; streaks</h3>
+            <p>Free daily micro-quizzes and streak mechanics to build consistent evaluation habits.</p>
+          </article>
+          <article class="glass glass-hover bento-card span-2 reveal">
+            <span class="tag tag-live">Live now</span>
+            <span class="card-label">Diagnostics</span>
+            <h3>Strength &amp; weakness matrix</h3>
+            <p>Topic-level heatmaps pinpoint conceptual gaps and risk-aversion thresholds before multi-year attempt commitments.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>AI development pipeline</h2>
+          <p>Next-generation capabilities in active development.</p>
+        </div>
+        <div class="bento">
+          <article class="glass glass-hover bento-card reveal">
+            <span class="tag tag-pipeline">In pipeline</span>
+            <span class="card-label">GenAI</span>
+            <h3>Synthetic question generation</h3>
+            <p>Exam-standard synthetic variants matching conceptual depth and distractor logic from PYQ benchmark curves.</p>
+          </article>
+          <article class="glass glass-hover bento-card reveal">
+            <span class="tag tag-pipeline">In pipeline</span>
+            <span class="card-label">CV &amp; NLP</span>
+            <h3>Mains handwritten evaluation</h3>
+            <p>OCR extraction plus semantic LLM scoring for structure, keywords, and rubric compliance.</p>
+          </article>
+          <article class="glass glass-hover bento-card reveal">
+            <span class="tag tag-pipeline">In pipeline</span>
+            <span class="card-label">AI mentorship</span>
+            <h3>Context-aware guidance</h3>
+            <p>Personalized study plans and qualitative feedback from performance telemetry.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Watch the product</h2>
+          <p>Walkthrough of Abhyaas score prediction and practice flow.</p>
+        </div>
+        <div class="video-shell reveal" id="video-shell">
+          <button class="video-poster" id="video-load" type="button" aria-label="Play Abhyaas product demo on YouTube">
+            <img
+              src="https://i.ytimg.com/vi/z1-Znoo_y5s/hqdefault.jpg"
+              alt="Abhyaas product demo video thumbnail"
+              width="480"
+              height="360"
+              loading="lazy"
+            >
+            <span class="video-play" aria-hidden="true">
+              <span class="video-play-btn">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="technology" class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Technical architecture</h2>
+          <p>Asset-light cloud microservices built for scale.</p>
+        </div>
+        <div class="bento">
+          <article class="glass glass-hover bento-card reveal">
+            <span class="card-label">Core IP</span>
+            <h3>Bayesian updating</h3>
+            <p>Sequential probability algorithms recalibrate mastery after every micro-test attempt.</p>
+          </article>
+          <article class="glass glass-hover bento-card reveal">
+            <span class="card-label">Infrastructure</span>
+            <h3>Serverless services</h3>
+            <p>Microservices architecture for low-latency evaluation and automated script processing.</p>
+          </article>
+          <article class="glass glass-hover bento-card reveal">
+            <span class="card-label">Data</span>
+            <h3>Dataset indexing</h3>
+            <p>Granular PYQ classification establishing empirical difficulty calibration curves.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>National impact</h2>
+          <p>Aligning EdTech innovation with India's competitive exam ecosystem.</p>
+        </div>
+        <article class="glass bento-card reveal" style="max-width:800px;margin:0 auto;">
+          <p>Millions of Indian youth spend years in inefficient exam cycles without calibrated readiness signals. Abhyaas delivers early diagnostics, real-time score trajectories, and affordable automated evaluation — democratizing quality mentorship for Tier-2, Tier-3, and rural aspirants.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="team" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Leadership</h2>
+          <p>Founders building Abhyaas at Vana Intellikrafts Solutions.</p>
+        </div>
+        <div class="team-grid">
+          <article class="glass team-card reveal">
+            <img src="../assets/priti.png" alt="Priti Airun" width="120" height="120" loading="lazy">
+            <div>
+              <h3>Priti Airun</h3>
+              <p class="role">CEO &amp; Chairperson</p>
+            </div>
+          </article>
+          <article class="glass team-card reveal">
+            <img src="../assets/ashish.png" alt="Ashish Airun" width="120" height="120" loading="lazy">
+            <div>
+              <h3>Ashish Airun</h3>
+              <p class="role">Co-founder</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="company" class="section" style="padding-top:0;">
+      <div class="container">
+        <article class="glass entity-card reveal">
+          <span class="card-label">Legal entity</span>
+          <h3>Vana Intellikrafts Solutions Private Limited</h3>
+          <dl class="entity-grid">
+            <div>
+              <dt>CIN</dt>
+              <dd>U62091RJ2026PTC116675</dd>
+            </div>
+            <div>
+              <dt>PAN</dt>
+              <dd>AAMCV5367N</dd>
+            </div>
+            <div>
+              <dt>Date of incorporation</dt>
+              <dd>01/08/2026</dd>
+            </div>
+            <div>
+              <dt>Stage</dt>
+              <dd>Validation / active development</dd>
+            </div>
+            <div>
+              <dt>Registered office</dt>
+              <dd>106, Shanti Nagar, Gurjar Ki Thadi, Shyam Nagar (Jaipur), Jaipur-302019, Rajasthan</dd>
+            </div>
+            <div>
+              <dt>Contact</dt>
+              <dd><a href="mailto:founder@vanaintellikrafts.in" style="color:var(--brand-link);font-weight:600;">founder@vanaintellikrafts.in</a></dd>
+            </div>
+          </dl>
+          <p class="entity-desc">
+            Indian EdTech R&amp;D company building data-driven active recall platforms and probabilistic evaluation models for competitive examinations including UPSC CSE, State PCS, and Banking. Primary product: <a href="https://abhyaas.co.in" target="_blank" rel="noopener" style="color:var(--brand-link);font-weight:600;">Abhyaas</a>.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Vana Intellikrafts Solutions Private Limited</strong>
+        CIN U62091RJ2026PTC116675 · PAN AAMCV5367N<br>
+        106, Shanti Nagar, Gurjar Ki Thadi, Shyam Nagar (Jaipur), Jaipur-302019, Rajasthan<br>
+        <a href="mailto:founder@vanaintellikrafts.in">founder@vanaintellikrafts.in</a>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="https://abhyaas.co.in" target="_blank" rel="noopener">Abhyaas</a>
+          <a href="https://youtu.be/z1-Znoo_y5s" target="_blank" rel="noopener">Demo video</a>
+        </div>
+      </div>
+      <div>
+        © 2026 Vana Intellikrafts Solutions Pvt Ltd. All rights reserved.<br>
+        Mockup for review — not yet deployed to vanaintellikrafts.in
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const VIDEO_ID = "z1-Znoo_y5s";
+
+      /* Mobile menu */
+      const toggle = document.querySelector(".menu-toggle");
+      const drawer = document.getElementById("mobile-menu");
+
+      const closeMenu = () => {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
+        drawer.classList.remove("open");
+        drawer.hidden = true;
+        document.body.style.overflow = "";
+      };
+
+      const openMenu = () => {
+        toggle.setAttribute("aria-expanded", "true");
+        toggle.setAttribute("aria-label", "Close menu");
+        drawer.hidden = false;
+        requestAnimationFrame(() => drawer.classList.add("open"));
+        document.body.style.overflow = "hidden";
+      };
+
+      toggle.addEventListener("click", () => {
+        if (toggle.getAttribute("aria-expanded") === "true") closeMenu();
+        else openMenu();
+      });
+
+      drawer.addEventListener("click", (e) => { if (e.target === drawer) closeMenu(); });
+      drawer.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+
+      /* YouTube — thumbnail first; embed on click (opens YouTube in new tab if file:// blocks iframe) */
+      document.getElementById("video-load").addEventListener("click", () => {
+        const shell = document.getElementById("video-shell");
+        const isFile = window.location.protocol === "file:";
+
+        if (isFile) {
+          window.open("https://www.youtube.com/watch?v=" + VIDEO_ID, "_blank", "noopener,noreferrer");
+          return;
+        }
+
+        const iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube.com/embed/" + VIDEO_ID + "?autoplay=1&rel=0&modestbranding=1&playsinline=1";
+        iframe.title = "Abhyaas product demo";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.allowFullscreen = true;
+        shell.innerHTML = "";
+        shell.appendChild(iframe);
+      });
+
+      /* Scroll reveal */
+      const observer = new IntersectionObserver(
+        (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("active"); }),
+        { threshold: 0.08 }
+      );
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+      /* Abhyaas chart — same algorithm as abhyaas.co.in landing */
+      const SCORES = [
+        86, 88, 85, 89, 87, 90, 88, 92, 90, 93, 91, 95, 93, 96, 94, 98,
+        97, 100, 99, 102, 101, 104, 103, 106, 105, 108, 107, 111, 110,
+        113, 112, 115, 114, 117, 116, 118
+      ];
+
+      const W = 320;
+      const H = 120;
+      const n = SCORES.length;
+
+      const buildPoints = () => SCORES.map((score, i) => {
+        const margin = 22 - (9 * i) / (n - 1);
+        const bandHalf = 6 + ((margin - 13) / 9) * 28;
+        return {
+          score,
+          margin,
+          bandHalf,
+          x: (i / (n - 1)) * W,
+          y: 94 - ((score - 86) / 32) * 58,
+        };
+      });
+
+      const POINTS = buildPoints();
+
+      const slicePoints = (progress) => {
+        if (progress <= 0) return [POINTS[0]];
+        if (progress >= 1) return POINTS;
+
+        const totalSegments = n - 1;
+        const exact = progress * totalSegments;
+        const full = Math.floor(exact);
+        const frac = exact - full;
+        const visible = POINTS.slice(0, full + 1);
+
+        if (frac > 0 && full < totalSegments) {
+          const a = POINTS[full];
+          const b = POINTS[full + 1];
+          visible.push({
+            x: a.x + (b.x - a.x) * frac,
+            y: a.y + (b.y - a.y) * frac,
+            score: a.score + (b.score - a.score) * frac,
+            margin: a.margin + (b.margin - a.margin) * frac,
+            bandHalf: a.bandHalf + (b.bandHalf - a.bandHalf) * frac,
+          });
+        }
+        return visible;
+      };
+
+      const buildLinePath = (pts) => {
+        if (pts.length < 1) return "";
+        return "M " + pts.map((p) => `${p.x.toFixed(2)},${p.y.toFixed(2)}`).join(" L ");
+      };
+
+      const buildBandPath = (pts) => {
+        if (pts.length < 2) return "";
+        const upper = pts.map((p) => `${p.x.toFixed(2)},${(p.y - p.bandHalf).toFixed(2)}`);
+        const lower = pts.slice().reverse().map((p) => `${p.x.toFixed(2)},${(p.y + p.bandHalf).toFixed(2)}`);
+        return "M " + upper.join(" L ") + " L " + lower.join(" L ") + " Z";
+      };
+
+      const confidenceLabel = (progress) => {
+        if (progress < 0.34) return "Confidence: low";
+        if (progress < 0.67) return "Confidence: medium";
+        return "Confidence: high";
+      };
+
+      const bandPath = document.getElementById("band-path");
+      const linePath = document.getElementById("line-path");
+      const dot = document.getElementById("dot");
+      const pulse1 = document.getElementById("pulse-1");
+      const pulse2 = document.getElementById("pulse-2");
+      const badge = document.getElementById("confidence-badge");
+      const scoreMain = document.getElementById("score-main");
+      const scoreRange = document.getElementById("score-range");
+
+      const renderChart = (progress) => {
+        const pts = slicePoints(progress);
+        const last = pts[pts.length - 1];
+
+        bandPath.setAttribute("d", buildBandPath(pts));
+        linePath.setAttribute("d", buildLinePath(pts));
+
+        dot.setAttribute("cx", last.x.toFixed(2));
+        dot.setAttribute("cy", last.y.toFixed(2));
+        pulse1.setAttribute("cx", last.x.toFixed(2));
+        pulse1.setAttribute("cy", last.y.toFixed(2));
+        pulse2.setAttribute("cx", last.x.toFixed(2));
+        pulse2.setAttribute("cy", last.y.toFixed(2));
+
+        const score = Math.round(last.score);
+        const low = Math.round(last.score - last.margin);
+        const high = Math.round(last.score + last.margin);
+
+        scoreMain.textContent = String(score);
+        scoreRange.textContent = low + " – " + high;
+        badge.textContent = confidenceLabel(progress);
+      };
+
+      if (reducedMotion) {
+        renderChart(1);
+      } else {
+        const drawMs = 10000;
+        const pauseMs = 2500;
+        const cycleMs = drawMs + pauseMs;
+        const start = performance.now();
+
+        const tick = (now) => {
+          const elapsed = (now - start) % cycleMs;
+          const progress = elapsed < drawMs ? elapsed / drawMs : 1;
+          renderChart(progress);
+          requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }
+    })();
+  </script>
+</body>
+</html>

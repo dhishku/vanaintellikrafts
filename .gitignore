@@ -1,0 +1,6 @@
+.env
+.env.*
+*.local
+
+# Confidential — not for public repo
+assets/abhyaas_pitch_deck.pdf

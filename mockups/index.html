@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vana Intellikrafts Solutions | Advanced AI & Statistical EdTech Systems</title>
+  <style>
+    :root {
+      --bg-dark: #07090e;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-hover: rgba(59, 130, 246, 0.4);
+      --primary: #3b82f6;
+      --cyan: #06b6d4;
+      --emerald: #10b981;
+      --primary-glow: rgba(59, 130, 246, 0.25);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      overflow-x: hidden;
+      line-height: 1.5;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 85% 65%, rgba(6, 182, 212, 0.12) 0%, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    /* Glassmorphic Shell */
+    .glass {
+      background: var(--card-bg);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-hover:hover {
+      border-color: var(--card-border-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px var(--primary-glow);
+    }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 20px;
+      z-index: 100;
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      background: rgba(10, 15, 26, 0.8);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 99px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .logo-mark {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #3b82f6, #06b6d4);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: 0 0 12px var(--primary-glow);
+    }
+
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: #fff;
+      padding: 0.6rem 1.3rem;
+      border-radius: 99px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 4px 15px var(--primary-glow);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary:hover { transform: scale(1.03); box-shadow: 0 6px 20px rgba(59,130,246,0.4); }
+
+    /* Hero Section & Micro Animations */
+    .hero {
+      max-width: 1200px;
+      margin: 4rem auto 3rem;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 99px;
+      font-size: 0.8rem;
+      color: #60a5fa;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      animation: pulse 2.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { border-color: rgba(59, 130, 246, 0.3); box-shadow: 0 0 0 0 rgba(59,130,246,0.2); }
+      50% { border-color: rgba(59, 130, 246, 0.7); box-shadow: 0 0 12px 2px rgba(59,130,246,0.3); }
+    }
+
+    .hero h1 {
+      font-size: 3.1rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 530px;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; align-items: center; }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 0.6rem 1.3rem;
+      border-radius: 99px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); }
+
+    /* Interactive macOS Window with Animated Dynamic Confidence Band */
+    .macos-window {
+      background: rgba(12, 18, 32, 0.9);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.8), 0 0 40px rgba(59, 130, 246, 0.15);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .window-header {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+
+    .window-content { padding: 1.5rem; }
+
+    .band-container {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .band-bar-outer {
+      height: 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 99px;
+      position: relative;
+      overflow: hidden;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    .band-bar-inner {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #06b6d4);
+      border-radius: 99px;
+      box-shadow: 0 0 12px #3b82f6;
+      animation: narrowBand 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes narrowBand {
+      0% { left: 15%; width: 70%; }
+      100% { left: 40%; width: 22%; }
+    }
+
+    /* Bento Grid Layout */
+    .section { max-width: 1200px; margin: 5rem auto; padding: 0 2rem; }
+    .section-title { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; text-align: center; margin-bottom: 0.5rem; }
+    .section-subtitle { text-align: center; color: var(--text-muted); font-size: 1rem; margin-bottom: 3rem; }
+
+    .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .bento-card { padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+    .bento-card.span-2 { grid-column: span 2; }
+
+    .live-tag {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pipeline-tag {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card-label { font-size: 0.75rem; font-weight: 700; color: #60a5fa; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+    .bento-card h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .bento-card p { color: var(--text-muted); font-size: 0.93rem; line-height: 1.6; }
+
+    /* Scroll Animation Observer Classes */
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .bento-grid { grid-template-columns: 1fr; }
+      .bento-card.span-2 { grid-column: span 1; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <div class="logo">
+        <div class="logo-mark">V</div>
+        Vana Intellikrafts
+      </div>
+      <ul class="nav-links">
+        <li><a href="#live-platform">Live Platform</a></li>
+        <li><a href="#pipeline">AI Roadmap</a></li>
+        <li><a href="#architecture">Statistical Tech</a></li>
+        <li><a href="#about">About Entity</a></li>
+      </ul>
+      <a href="https://abhyaas.co.in" target="_blank" class="btn-primary">Launch Abhyaas →</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="reveal">
+      <div class="badge">
+        <span style="width:6px;height:6px;background:#60a5fa;border-radius:50%"></span>
+        DPIIT Recognized Startup • Statistical & GenAI Platform
+      </div>
+      <h1>Active Recall & Predictive Analytics for Competitive Exams</h1>
+      <p>Vana Intellikrafts Solutions replaces passive syllabus completion with dynamic 95% confidence band score modeling, instant topic-level micro-testing, and automated evaluation engines on Abhyaas AI.</p>
+      <div class="hero-actions">
+        <a href="https://abhyaas.co.in" target="_blank" class="btn-primary">Explore Live Platform</a>
+        <a href="#architecture" class="btn-secondary">Technical Architecture</a>
+      </div>
+    </div>
+
+    <!-- Live Trinomial Engine macOS Card -->
+    <div class="macos-window reveal">
+      <div class="window-header">
+        <div class="dot red"></div>
+        <div class="dot yellow"></div>
+        <div class="dot green"></div>
+        <span style="font-size:0.75rem; color:var(--text-muted); margin-left: auto;">Trinomial Engine v1.8 (Prelims Score Modeling)</span>
+      </div>
+      <div class="window-content">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+          <span style="font-size:0.85rem; font-weight:600;">UPSC Prelims Score Projection</span>
+          <span style="color:#10b981; font-size:0.8rem; font-weight:700;">Live Simulation</span>
+        </div>
+        
+        <div class="band-container">
+          <div style="display:flex; justify-content:space-between; font-size:0.8rem;">
+            <span style="color:var(--text-muted)">Projected Range (95% CI):</span>
+            <span style="color:#60a5fa; font-weight:700;">102.5 ± 4.2 Marks</span>
+          </div>
+          <div class="band-bar-outer">
+            <div class="band-bar-inner"></div>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-muted);">
+            <span>High Variance (Attempt #1)</span>
+            <span style="color:#10b981;">Narrow Variance (Attempt #50)</span>
+          </div>
+        </div>
+
+        <div style="margin-top:1rem; display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; font-size:0.78rem;">
+          <div style="background:rgba(255,255,255,0.02); padding:8px 12px; border-radius:8px; border:1px solid var(--card-border);">
+            <span style="color:var(--text-muted)">Conceptual Mastery:</span><br>
+            <strong style="color:#f8fafc">P(Correct) = 0.74</strong>
+          </div>
+          <div style="background:rgba(255,255,255,0.02); padding:8px 12px; border-radius:8px; border:1px solid var(--card-border);">
+            <span style="color:var(--text-muted)">Penalty Risk Index:</span><br>
+            <strong style="color:#f8fafc">P(Incorrect) = 0.18</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Features Section -->
+  <section id="live-platform" class="section">
+    <h2 class="section-title reveal">Live Features on Abhyaas.co.in</h2>
+    <p class="section-subtitle reveal">Active features currently available to aspirants on the platform</p>
+    
+    <div class="bento-grid">
+      
+      <div class="glass glass-hover bento-card span-2 reveal">
+        <span class="live-tag">Live Now</span>
+        <div>
+          <div class="card-label">Statistical Modeling</div>
+          <h3>Trinomial Probability & Dynamic 95% Confidence Band</h3>
+          <p>Moving beyond basic scoring. Our engine captures P(Correct), P(Incorrect penalty risk), and P(Unattempted threshold). Through sequential Bayesian updating over test attempts, the 95% confidence interval [μ - 1.96σ, μ + 1.96σ] dynamically narrows, revealing exact exam readiness.</p>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="https://abhyaas.co.in" target="_blank" style="color:#60a5fa; text-decoration:none; font-weight:600; font-size:0.88rem;">Try Dynamic Score Projection →</a>
+        </div>
+      </div>
+
+      <div class="glass glass-hover bento-card reveal">
+        <span class="live-tag">Live Now</span>
+        <div>
+          <div class="card-label">Topic-Wise Practice</div>
+          <h3>Immediate Micro-Testing</h3>
+          <p>Aspirants can select specific syllabus topics and practice instant targeted question sets immediately post-study without waiting for full syllabus completion.</p>
+        </div>
+      </div>
+
+      <div class="glass glass-hover bento-card reveal">
+        <span class="live-tag">Live Now</span>
+        <div>
+          <div class="card-label">Habit Engine</div>
+          <h3>Daily Quizzes & Streaks</h3>
+          <p>Free daily micro-quizzes, gamified daily habit streaks, and social validation mechanics to build consistent evaluation routines.</p>
+        </div>
+      </div>
+
+      <div class="glass glass-hover bento-card span-2 reveal">
+        <span class="live-tag">Live Now</span>
+        <div>
+          <div class="card-label">Diagnostic Analytics</div>
+          <h3>Strength & Weakness Matrix</h3>
+          <p>Granular topic-level heatmaps pinpointing precise conceptual knowledge gaps and risk-aversion thresholds before multi-year attempt commitments.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AI Pipeline & Roadmap Section -->
+  <section id="pipeline" class="section">
+    <h2 class="section-title reveal">AI Development Pipeline</h2>
+    <p class="section-subtitle reveal">Next-generation features currently in active development for upcoming releases</p>
+    
+    <div class="bento-grid">
+      
+      <div class="glass glass-hover bento-card reveal">
+        <span class="pipeline-tag">In Pipeline</span>
+        <div>
+          <div class="card-label">GenAI Synthesis</div>
+          <h3>Synthetic Question Generation</h3>
+          <p>Fine-tuned Generative AI models synthesizing UPSC-standard synthetic question variants matching conceptual depth and distractor logic derived from PYQ benchmark curves.</p>
+        </div>
+      </div>
+
+      <div class="glass glass-hover bento-card reveal">
+        <span class="pipeline-tag">In Pipeline</span>
+        <div>
+          <div class="card-label">Computer Vision & NLP</div>
+          <h3>Mains Handwritten Answer Evaluation</h3>
+          <p>Custom OCR document pipelines extracting handwritten candidate text, coupled with semantic LLMs scoring structural thesis, keyword density, and rubric compliance.</p>
+        </div>
+      </div>
+
+      <div class="glass glass-hover bento-card reveal">
+        <span class="pipeline-tag">In Pipeline</span>
+        <div>
+          <div class="card-label">AI Mentorship</div>
+          <h3>Context-Aware AI Guidance</h3>
+          <p>Interactive AI mentorship agents delivering personalized daily study plans and actionable qualitative feedback directly from performance telemetry.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technical Architecture -->
+  <section id="architecture" class="section">
+    <h2 class="section-title reveal">Advanced Technical Architecture</h2>
+    <p class="section-subtitle reveal">Asset-light cloud microservices engineered for high scale</p>
+    
+    <div class="bento-grid">
+      <div class="glass glass-hover bento-card reveal">
+        <h3>Bayesian Updating Model</h3>
+        <p>Sequential probability algorithms recalibrating candidate mastery scores continuously after every micro-test attempt.</p>
+      </div>
+      <div class="glass glass-hover bento-card reveal">
+        <h3>Serverless AI Services</h3>
+        <p>Serverless microservices architecture facilitating automated script processing and low-latency evaluation responses.</p>
+      </div>
+      <div class="glass glass-hover bento-card reveal">
+        <h3>Dataset Indexing Engine</h3>
+        <p>Granular classification and indexing of historical exam papers establishing empirical difficulty calibration curves.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Entity / Legal Section -->
+  <section id="about" class="section">
+    <div class="glass bento-card reveal" style="padding: 3rem;">
+      <div class="card-label">Legal Corporate Entity</div>
+      <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">VANA INTELLIKRAFTS SOLUTIONS PRIVATE LIMITED</h3>
+      <p style="color:#60a5fa; font-weight:600; font-size:0.9rem; margin-bottom: 1.5rem;">CIN: U62091RJ2026PTC116675 | DPIIT Recognized Startup</p>
+      <p style="color: var(--text-muted); max-width: 850px; font-size: 0.95rem; line-height: 1.7;">
+        Vana Intellikrafts Solutions Private Limited is an Indian EdTech R&D company. We build data-driven active recall platforms and advanced probabilistic evaluation models to eliminate candidate preparation inefficiencies in competitive examinations like UPSC CSE, State PCS, and Banking.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <strong>VANA INTELLIKRAFTS SOLUTIONS PRIVATE LIMITED</strong><br>
+      Corporate Contact: founder@vanaintellikrafts.in
+    </div>
+    <div style="text-align:right;">
+      © 2026 Vana Intellikrafts Solutions Pvt Ltd. All rights reserved.<br>
+      Primary Platform: <a href="https://abhyaas.co.in" target="_blank" style="color:#60a5fa; text-decoration:none;">https://abhyaas.co.in</a>
+    </div>
+  </footer>
+
+  <!-- Scroll Observer Script for Smooth Reveals -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>
