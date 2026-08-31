@@ -2,6 +2,7 @@
 .env.*
 !.env.example
 *.local
+.vercel
 
 # Confidential — not for public repo
 assets/abhyaas_pitch_deck.pdf
