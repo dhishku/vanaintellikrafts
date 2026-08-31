@@ -25,13 +25,15 @@ if (Test-Path $EnvFile) {
 }
 
 $records = @(
-    @{ type = "A"; name = "@"; data = "76.76.21.21"; ttl = 600 }
-    @{ type = "A"; name = "www"; data = "76.76.21.21"; ttl = 600 }
+    @{ type = "A"; name = "@"; data = "216.198.79.1"; ttl = 600 }
+    @{ type = "A"; name = "@"; data = "64.29.17.1"; ttl = 600 }
+    @{ type = "CNAME"; name = "www"; data = "cabfa52eeed6b572.vercel-dns-017.com"; ttl = 600 }
 )
 
 Write-Host "GoDaddy DNS for $Domain -> Vercel"
-Write-Host "  A @ -> 76.76.21.21"
-Write-Host "  A www -> 76.76.21.21"
+Write-Host "  A @ -> 216.198.79.1"
+Write-Host "  A @ -> 64.29.17.1"
+Write-Host "  CNAME www -> cabfa52eeed6b572.vercel-dns-017.com"
 
 if ($WhatIf) {
     Write-Host "WhatIf: no API calls made."
