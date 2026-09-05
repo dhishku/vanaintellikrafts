@@ -39,7 +39,7 @@ Do not treat [`mockups/index.html`](../mockups/index.html) (Gemini draft) as sou
 
 **Pipeline (never “Live”):** Mains OCR + rubric NLP, AI mentorship, broader GenAI synthesis.
 
-Do not claim the company already runs on Google Cloud.
+Do not claim the stack runs entirely on Google Cloud — Abhyaas uses AWS and other providers alongside any GCP services.
 
 ## What raises odds (do not fake)
 
